@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/regular-style.css" />
+    <title>MoodMate</title>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <header>
+      <h1 id="nav-header"><a href="#landing" class="logo"><img src="/moodmate_logo.png" alt="Logo"></a></h1>
+      <nav class="navigation">
+        <a href="#landing">Home</a>
+        <a href="#diary">Diary</a>
+        <a href="#exercise">Exercises</a>
+        <a href="#" id="log-out">Log out</a>
+      </nav>
+    </header>
+
+    <!-- Landing section -->
+    <section class="landing-section" id="landing">
+      <h2 id="greeting-header"></h2>
+      <h2 id="date-header"></h2>
+      <p>Every entry in your diary is a step forward in your journey of self-discovery and growth. Embrace each word as a testament to your progress and resilience.</p>
+
+      <p id="update-account-question">Would you like to update your login information?</p>
+      <p id="update-account-text-button">Update Login</p>
+      <p id="cancel-account-update-button">Cancel</p>
+      
+      <!-- Target for Update user form -->
+      <form id="update-user-form"></form>
+    </section>
+
+    <!-- Diary section -->
+    <section class="diary-section" id="diary">
+
+      <!-- Left side of the diary section -->
+      <div class="left-diary">
+
+        <!-- Top-left section -->
+        <div class="top-left-diary">
+          <h3>Manage your diary</h3>
+          <p>MoodMate ensures that your
+            feelings are documented, helping you gain valuable insights into
+            your emotional journey.
+          </p>
+          <button id="get_all_entries">Get entries</button>
+          <button id="hide_all_entries">Hide entries</button>
+        </div>
+
+        <!-- Bottom-left section -->
+        <div class="bottom-left-diary" >
+          <div class="container" id="diary-container">
+            <h1>Create a diary entry</h1>
+            <!-- Form for new diary entry -->
+            <form method="post" id="entry_form">
+              <label for="mood">Pick a color to represent your day: </label>
+              <select id="mood" name="mood">
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+              </select>
+
+              <label for="weight">Weight (kg):</label>
+              <input
+                type="number"
+                id="weight"
+                name="weight"
+                step="0.1"
+                placeholder="Enter your weight"
+                required
+              />
+
+              <label for="sleep">Sleep hours:</label>
+              <input
+                type="number"
+                id="sleep"
+                name="sleep"
+                step="0.1"
+                placeholder="Enter your sleep hours"
+                required
+              />
+
+              <label for="notes">Describe your day:</label>
+              <textarea
+                id="notes"
+                name="notes"
+                rows="8"
+                placeholder="Enter additional notes"
+                style="resize: none"
+                maxlength="250"
+              ></textarea>
+              <!-- Submit button -->
+              <button type="submit" id="entry_submit">Create diary entry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right diary section -->
+      <div class="right-diary"></div>
+    </section>
+
+    <!-- Exercise section -->
+    <section class="exercise-section" id="exercise">
+
+      <!-- left exercise section -->
+      <div class="left-exercise">
+        <!-- top left exercise section -->
+        <div class="top-left-exercise">
+          <h3>Track your exercises</h3>
+          <p>
+            A precise way to record your completed activities.
+            Note the duration and intensity of the activity — whether it’s a jog, boxing-class or a yoga
+            session.
+          </p>
+          <button id="get_all_exercises">Get exercises</button>
+          <button id="hide_all_exercises">Hide exercises</button>
+
+        </div>
+        <!-- Bottom left exercise section -->
+        <div class="bottom-left-exercise">
+          <!-- "Add a exercise" container -->
+          <div class="container" id="exercise-container">
+            <h4>Add a exercise</h4>
+            <form method="post" id="exercise-form">
+              <!-- Activity type dropdown menu  -->
+              <label for="activity">Select an activity: </label>
+              <select id="activity" name="activity">
+                <option value="Running">Running</option>
+                <option value="Walking">Walking</option>
+                <option value="Hockey">Hockey</option>
+                <option value="Football">Football</option>
+                <option value="Dancing">Dancing</option>
+                <option value="Swimmming">Swimmming</option>
+                <option value="Floorball">Floorball</option>
+                <option value="Weightlifting">Weightlifting</option>
+                <option value="Combat sports">Combat sports</option>
+                <option value="Cardio">Cardio</option>
+                <option value="Other">Other</option>
+              </select>
+              <!-- Duration selection  -->
+              <label for="duration">Duration in minutes:</label>
+              <input
+                type="number"
+                id="duration"
+                name="duration"
+                step="0.1"
+                required
+              />
+              <!-- intensity dropdown menu  -->
+              <label for="intensity">intensity level:</label>
+              <select id="intensity" name="intensity">
+                <option value="Easy">Easy</option>
+                <option value="Light">Light</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Demanding">Demanding</option>
+                <option value="Hard">Hard</option>
+              </select>
+
+              <!-- Submit button -->
+              <button type="submit">Add entry</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle exercise section -->
+      <div class="middle-exercise">
+        <!-- <h3>Time and effort spent</h3> -->
+      </div>
+
+      <!-- Right exercise section -->
+      <div class="right-exercise">
+        <!-- Table target to dump exercise data-->
+        <table class="styled-table">
+          <tbody class="tbody"></tbody>
+        </table>
+        <tbody class="tbody"></tbody>
+      </div>
+
+    </section>
+
+    <!-- Snackbar -->
+    <div id="snackbar-target"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Copyright © 2030 MoodMate. All rights reserved.</p>
+      <p>Just kidding</p>
+    </footer>
+    <!-- Import script -->
+    <script type="module" src="./regular2.js"></script>
+  </body>
+</html>

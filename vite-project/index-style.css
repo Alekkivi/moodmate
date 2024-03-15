@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* ------------------------- Navigation ------------------------- */
+header {
+    background-color: rgb(228, 228, 228);
+    padding: 1px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+} 
+
+header .logo img {
+    padding-top: 1vh;
+    width: 50px;
+    height: 50px;
+}
+
+header .navigation a {    
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+}
+
+/* ------------------------- Background image ------------------------ */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(238, 238, 238, 0) 87%,
+        rgba(238, 238, 238, 1) 99%,
+        rgba(238, 238, 238, 1) 100%
+      ),
+      url(/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ------------------------- Introduction ------------------------ */
+#introduction-content {
+    padding: 20% 0 25% 5%;
+    width: 60%;
+}
+
+#introduction-content h2 {
+    font-size: 55px;
+    letter-spacing: 1.5px;
+}
+
+#introduction-content h2 span {
+    color: #c4c4c4;
+}
+
+#introduction-content p {
+    margin-top: 40px;
+    font-size: 25px;
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+}
+
+.sign-in{
+    margin: 2% 0 0% 5%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    display: none;
+}
+
+/* ------------------------- About ------------------------ */
+.about-content h4, .about-content p {
+    width: 59%;
+    margin-left: 5%;
+    font-size: 55px;
+    letter-spacing: 1.5px;
+}
+
+.about-content p {
+    margin-top: 30px;
+    font-size: 25px;
+    line-height: 2;
+}
+
+
+/* ------------------------- About us ------------------------ */
+.contact-content {
+    margin: 15% 0 0% 5%;
+    height: 50vh;
+    justify-content: space-between;
+    width: 50%;
+
+}
+
+.contact-content h5{
+    color: #000000;
+    font-size: 55px;
+    letter-spacing: 1.5px;
+    padding-bottom: 20px
+}
+
+.contact-content p{
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    font-size: 25px;
+    
+}
+
+
+/* --------------------------- Footer ------------------------ */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    background-color: #a1a1a1;
+    height: 90px;
+    padding: 20px;
+}
+footer p{
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+}
+
+/*------------------- Media rules for mobile view -----------------*/
+@media (max-width: 1350px) {
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        height: 50px; 
+      }
+      
+      .navigation {
+        display: none;
+      }
+
+    body {
+        background-color: #eeeeee;
+        background-image: none;
+        min-height: 15vh;
+        margin: 0;
+    }
+    #introduction-content{
+        width: 90%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .sign-in{
+        display: inline;
+        margin-bottom: 10vh;
+    }
+
+    .about-content h4, .about-content p {
+        width: 90%;
+    }
+    .contact-content{
+        width: 60%;
+        margin-bottom: 40%;
+    }
+    
+    footer p{
+        line-height: 1.5;
+        letter-spacing: 1px;
+      }
+}
