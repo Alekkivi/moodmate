@@ -1,78 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
-
-/* ------------------------- Navigation ------------------------- */
-header {
-    background-color: rgb(228, 228, 228);
-    padding: 1px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; 
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
-} 
-
-header .logo img {
-    padding-top: 1vh;
-    width: 50px;
-    height: 50px;
-}
-
-header .navigation a {    
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 2px 15px;
-}
-
-/* ------------------------- Background image ------------------------ */
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(
-      to bottom,
-      rgba(238, 238, 238, 0) 87%,
-      rgba(238, 238, 238, 1) 99%,
-      rgba(238, 238, 238, 1) 100%
-    ),
-    url(/bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 /* ------------------------- Introduction ------------------------ */
 #introduction-content {
   padding: 15% 0 2% 5%;
-  width: 80%;
 }
-
 #introduction-content h2 {
   font-size: 50px;
   letter-spacing: 1.5px;
+  width: 60%;
 }
-
 #introduction-content h2 span {
   color: #c4c4c4;
 }
-.introduction{
-  /* background-color: gold; */
+.container{
+  min-height: 100vh;
 }
-
 /* ------------------------- Form section ------------------------ */
-
 .both-forms {
   display: flex;
   justify-content: flex-start;
@@ -80,7 +21,7 @@ body {
   margin: 0% 0 10% 5%;
   gap: 7vh;
 }
-
+/* ------------------------- Form styling ------------------------ */
 form {
   border: 1px solid #cccccce5;
   padding: 20px;
@@ -88,17 +29,14 @@ form {
   margin-bottom: 20px;
   background-color: #c4c4c452;
 }
-
 h2 {
   margin-top: 0;
   padding-bottom: 2vh;
 }
-
 label {
   display: block;
   margin-bottom: 5px;
 }
-
 input[type="text"],
 input[type="password"],
 input[type="email"] {
@@ -108,7 +46,6 @@ input[type="email"] {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
 input[type="submit"] {
   background-color: #007bff;
   color: #fff;
@@ -118,88 +55,15 @@ input[type="submit"] {
   cursor: pointer;
   border-radius: 5px;
 }
-
 input[type="submit"]:hover {
   background-color: #0056b3;
 }
-
-
-/* --------------------------- Snackbar ------------------------ */
-#snackbar-target {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-}
-
-#snackbar-target.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-
-/* --------------------------- Footer ------------------------ */
-footer{
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  flex-direction: column;
-  background-color: #a1a1a1;
-  height: 90px;
-  padding: 20px;
-}
-footer p{
-  line-height: 1.5;
-  letter-spacing: 1.5px;
-}
-
 /*------------------- Media rules for mobile view -----------------*/
-@media (max-width: 1150px) {
-
-  header {
-      display: flex;
-      justify-content: center;
-      align-items: center; 
-      height: 50px; 
-    }
-    
-    .navigation {
-      display: none;
-    }
+@media (max-width: 1350px) {
     #introduction-content h2 {
       letter-spacing: 1px;
+      margin: auto;
     }
-
   body {
       background-color: #eeeeee;
       background-image: none;
@@ -208,11 +72,10 @@ footer p{
   }
   .both-forms{
     flex-direction: column;
-    padding: 10%;
+    padding: 0 10%;
   }
   footer p{
     line-height: 1.5;
     letter-spacing: 1px;
   }
-
 }

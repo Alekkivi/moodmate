@@ -9,59 +9,66 @@
     <title>MoodMate - Admin</title>
   </head>
   <body>
-    
     <header>
-      <h1><a href="#" class="logo">Logo</a></h1>
+      <h1 id="nav-header">
+        <a href="#top" class="logo"
+          ><img src="/moodmate_logo.png" alt="Logo"
+        /></a>
+      </h1>
       <nav class="navigation">
-        <a href="#">Log out</a>
+        <a href="#" id="log-out">Log out</a>
       </nav>
     </header>
+
     <div id="container">
 
-      <div class="user">Hello <span id="name"></span>!<br> You are logged in as admin</div>
+      <section class="greeting" id="top">
+        <h2 class="user">Hello <span id="name"></span><br/>You are logged in as admin</h2>
+      </section>
 
+      <section class="forms">
+        <h3>Manage all users</h3>
+        <p>
+          By pressing the button below, you will access all user accounts stored
+          in the database. From there, you will be able to view profile
+          information, delete accounts and see or delete specific diary entries.
+        </p>
+        <p>The controlled exercise entry creation process reduces the necessity to monitor user-specific exercise entries.</p>
+        <p>
+          Deleting a specific user initiates a process that sequentially removes
+          exercise entries, followed by diary entries, and finally deletes the
+          user.
+        </p>
+        <p id="warning">Please exercise caution!</p>
 
-      <div class="forms">
-        <div style="flex: 1">
-          <h3>Manage all users</h3>
+        <table class="styled-table">
+          <tbody class="tbody">
+            <thead></thead>
+          </tbody>
+        </table>
 
-          <p>
-              By pressing the button below, you will access all user accounts stored in the database. From there, you will be able to view profile information, delete accounts and see, modify or delete specific entries.
-          </p>
-          <p id="warning">Please exercise caution!</p>
+        <div class=""></div>
 
-          <table class="styled-table">
-            <thead>
-              <tr>
-                <th>User Name</th>
-                <th>User Level</th>
-                <th>Info</th>
-                <th>Delete</th>
-                <th>ID</th>
-                <th>Entries</th>
-              </tr>
-            </thead>
+        <button class="get_users">Get users</button>
+        <button class="get_users" id="hide_all_users">Hide users</button>
+        <button class="get_users" id="hide_all_entries">Hide entries</button>
+      </section>
 
-            <tbody class="tbody"></tbody>
+      <dialog class="info_dialog">
+        <div id="modal_target"></div>
+      </dialog>
 
-            <dialog class="info_dialog">
-              <p></p>
-              <button autofocus>Close</button>
-            </dialog>
-            
-          </table>
-          <div class=""></div>
+      <section id="entry_target"></section>
+    </div>
+    <div id="snackbar-target"></div>
+    
 
-          <button class="get_users">Get users</button>
-          <button class="get_users" id="hide_all_users">Hide users</button>
-          <button class="get_users" id="hide_all_entries">Hide entries</button>
+    <!-- Footer -->
+    <footer>
+      <p>Copyright © 2030 MoodMate. All rights reserved.</p>
+      <p>Just kidding</p>
+    </footer>
 
-        <section id="entry_target"></section>
-      </div>
-
-      <div class="snackbar" id="create-bad-login-snackbar"></div>
-  </div>
     <script type="module" src="/admin.js"></script>
-
   </body>
 </html>

@@ -57,6 +57,7 @@
             <form method="post" id="entry_form">
               <label for="mood">Pick a color to represent your day: </label>
               <select id="mood" name="mood">
+                <option value="placeholder" disabled selected hidden>Select a color</option>
                 <option value="Red">Red</option>
                 <option value="Orange">Orange</option>
                 <option value="Yellow">Yellow</option>
@@ -71,6 +72,7 @@
                 step="0.1"
                 placeholder="Enter your weight"
                 required
+                min="0.1"
               />
 
               <label for="sleep">Sleep hours:</label>
@@ -81,6 +83,8 @@
                 step="0.1"
                 placeholder="Enter your sleep hours"
                 required
+                min="0"
+                max="24"
               />
 
               <label for="notes">Describe your day:</label>
@@ -167,17 +171,16 @@
       </div>
 
       <!-- Middle exercise section -->
-      <div class="middle-exercise">
-        <!-- <h3>Time and effort spent</h3> -->
-      </div>
+      <div class="middle-exercise"></div>
 
       <!-- Right exercise section -->
       <div class="right-exercise">
         <!-- Table target to dump exercise data-->
         <table class="styled-table">
-          <tbody class="tbody"></tbody>
+          <tbody class="tbody">
+            <thead class="thead"></thead>
+          </tbody>
         </table>
-        <tbody class="tbody"></tbody>
       </div>
 
     </section>
@@ -191,6 +194,6 @@
       <p>Just kidding</p>
     </footer>
     <!-- Import script -->
-    <script type="module" src="./regular2.js"></script>
+    <script type="module" src="./regular.js"></script>
   </body>
 </html>

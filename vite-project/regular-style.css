@@ -1,58 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-* {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-}
-
-/* ------------------------- Navigation ------------------------- */
-header {
-  background-color: rgb(228, 228, 228);
-  padding: 1px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; 
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
-} 
-#nav-header{
-  margin: 0;
-}
-header .logo img {
-  padding-top: 1vh;
-  width: 50px;
-  height: 50px;
-}
-
-header .navigation a {    
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 1px;
-  padding: 2px 15px;
-}
-
-/* ------------------------- Background image ------------------------ */
-body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(
-      to bottom,
-      rgba(238, 238, 238, 0) 87%,
-      rgba(238, 238, 238, 1) 99%,
-      rgba(238, 238, 238, 1) 100%
-    ),
-    url(/bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Fixed background image */
-}
 
 /* ----------------------------- Landing ----------------------------- */
 .landing-section {
@@ -136,6 +81,10 @@ body {
   padding: 10px;
 }
 
+/* ------------------------- Form validation ----------------------------- */
+#mood option[disabled] {
+  color: #999; /* Placeholder text color */
+}
 
 /* ------------------------------ Diary ----------------------------- */
 .diary-section {
@@ -187,129 +136,37 @@ body {
     /* background-color: green; */
   }
 
-/* ------------------------- Cards ---------------------- */
-.card {
-  margin: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-}
-
-  
-.card-diary {
-    width: 19rem;
-    padding: 10px;
-    background-color: white;
-    height: 37.5vh;
-    border-radius: 0 0 20px 20px;
-    border: 1px solid black; /* Solid black thin outline */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Drop shadow */
-}
-  
-.card-diary p {
-    padding-top: 1.5vh;
-    line-height: 1;
-}
-  
-  
-.card-diary h5 {
-    margin-top: 20px;
-    font-size: 1.5rem;
-}
-  
-.card-notes-section{
-    width: 100%;
-    height: 21vh;
-    word-wrap: break-word;
-    white-space: normal;
-    padding: 0;
-}
-  
-.mood-colour {
-    width: 100%;
-    height: 3.3vh;
-    border-radius: 20px 20px 0 0;
-    display: flex;
-    padding-left: 15px;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid black; 
-
-}
-  
-.entry-options {
-    padding-right: 5px;
-}
-  
-.entry-button, .delete-button {
-    border-radius: 20px;
-    border: none;
-    padding: 2px;
-    margin-top: 10px;
-    font-size: 16px;
-    font-family: inherit;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 3px;
-    color: black;
-}
-  
-.entry-button {
-    font-weight: 750;
-    width: 4vh;
-}
-  
-.delete-button {
-    font-weight: 1000;
-    width: 3vh;
-}
-  
-.entry-button:hover {
-    background-color: #c2c2c2;
-}
-
 /* --------------------------- Exercise ------------------------ */
 .exercise-section {
   padding-top: 10vh;
   display: flex;
   font-size: 20px;
-  background-color: #dddddd;
+  /* background-color: #dddddd; */
 }
+
+#exercise-container{ /* This is add exercise-form-bg*/
+  /* background-color: gold; */
+  margin: 0;
+}
+/* ---------------------- Left exercise ------------------------ */
 .left-exercise {
-  background-color: aqua;
+  /* background-color: aqua; */
   flex: 1.5;
   display: flex;
   flex-direction: column;
   padding-left: 2%;
 }
 
-.right-exercise {
-  background-color: green;
-  flex: 3;
-}
-
-.middle-exercise{
-  padding: 0 2% 0 2%;
-  background-color: hotpink;
-  flex: 1.3;
-
-}
 .top-left-exercise {
-  background-color: firebrick;
+  /* background-color: firebrick; */
   flex: 1.5;
 }
 
 .bottom-left-exercise {
   padding-top: 2vh;
   padding-bottom: 5vh;
-  background-color: blue;
+  /* background-color: blue; */
   flex: 3.5;
-}
-
-#exercise-container{
-  background-color: gold;
-  margin: 0;
 }
 
 .top-left-exercise h3 {
@@ -323,26 +180,32 @@ body {
   padding-right: 2vh;
 }
 
-.exercise-stats-target h3{
+/* ---------------------- Right exercise ------------------------ */
+.right-exercise {
+  /* background-color: green; */
+  flex: 3;
+}
+/* ---------------------- Middle exercise ------------------------ */
+.middle-exercise{
+  padding: 0 2% 0 2%;
+  flex: 1.5;
+}
+
+.middle-exercise h4{
   margin: 0;
   padding: 0;
-  font-size: 25px;
+  font-size: 30px;
   padding-bottom: 20px;
-  padding-top: 3vh;
-
 }
-.exercise-stats-target p{
+.middle-exercise p{
   margin: 0;
   padding: 0;
-  font-weight: 700;
-  color: #525252;
   padding-bottom: 10px;
-
 }
 
-.exercise-stats-target p span{
-  color: #328beb;
-  font-weight: 800;
+.middle-exercise p span{
+  color: #007bff;
+  font-weight: 750;
 }
 
 /* --------------------------- Forms ------------------------ */
@@ -394,100 +257,4 @@ button:hover {
 }
 #modify-entry-form h3{
     padding-bottom: 2vh;
-}
-/* --------------------------- Footer ------------------------ */
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #a1a1a1;
-  height: 90px;
-  padding: 20px;
-}
-footer p {
-  line-height: 1.5;
-  letter-spacing: 1.4px;
-}
-
-
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  border-radius: 10px; 
-  overflow: hidden;
-}
-
-.styled-table thead tr {
-  background-color: #3b3b3b; /* Dark background color for the header */
-  color: #ffffff;
-  text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #3b3b3b; /* Darker bottom border for the last row */
-}
-
-.styled-table tbody tr:hover {
-  background-color: #beb8f358; /* Slightly transparent background color on hover */
-  cursor: pointer;
-}
-
-/* --------------------------- Snackbar ------------------------ */
-#snackbar-target {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-}
-
-#snackbar-target.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
 }

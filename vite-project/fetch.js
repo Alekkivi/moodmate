@@ -6,9 +6,12 @@
  *
  * @returns {Object} response json data
  */
-const fetchData = async (url, options = {}) => {
+
+const fetchData = async (endpoint, options = {}) => {
     let jsonData;
     try {
+        const url = "https://hyte-server-aleksi.northeurope.cloudapp.azure.com" + endpoint
+        console.log('fetchData', options )
         const response = await fetch(url, options);
   
         if (!response.ok) {
@@ -26,21 +29,36 @@ const fetchData = async (url, options = {}) => {
   };
   
 
-async function get(url) {
+async function get(endpoint) {
     const token = localStorage.getItem("token");
-  
     // Define request
     const options = {
       method: "GET",
       headers: {
         Authorization: "Bearer: " + token,
+        "Content-Type": "application/json",
       },
     };
     // Fetch data and return the promise
-    return fetchData(url, options).then((data) => {
+    return fetchData(endpoint, options).then((data) => {
       return data;
     });
-  }
-  
-  export { fetchData, get };
+}
+
+// Send a DELETE request to a specified URL
+async function deleteRequest(url, token) {
+  // Define the DELETE request
+  const options = {
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer: " + token,
+      "Content-Type": "application/json",
+    },
+  };
+  // Send the request
+  fetchData(url, options);
+}
+
+
+export { fetchData, get, deleteRequest};
   

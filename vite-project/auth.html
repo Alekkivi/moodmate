@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/auth-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoodMate</title>
   </head>
   <body>
-    
     <!-- Navigation -->
     <header>
-      <h1><a href="home.html" class="logo"><img src="/moodmate_logo.png" alt="Logo"></a></h1>
+      <h1><a href="index.html" class="logo"><img src="/moodmate_logo.png" alt="Logo"></a></h1>
       <nav class="navigation">
         <a href="home.html">Home</a>
         <a href="home.html#about">About</a>
@@ -18,60 +16,53 @@
         <a href="./auth.html">Log in</a>
       </nav>
     </header>
-    
-    <body>
-
+      <!-- Container to set min-height -->
+      <div class="container">
       <!-- Introduction section -->
       <section class="introduction" id="landing">
         <div id="introduction-content">
-          <h2>Each entry is a step to self-discovery<br /><span>Start your jorney now</span></h2>
+          <h2>Each entry is a step to self-discovery<br><span>Start your jorney now</span></h2>
         </div>
       </section>
-
+      <!-- Both forms section -->
       <section class="both-forms">
-          <form class="login_form">
-            <h2>Login</h2> <!-- Header for the login form -->
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="test" />
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="test" />
-            <input
-              name="submit"
-              type="submit"
-              value="Login"
-              class="loginuser"
-            />
-          </form>
-        
-          <form class="create_user_form">
-            <h2>Create Account</h2> <!-- Header for the create account form -->
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="New username" />
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="New password" />
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email" />
-            <input
-              name="submit"
-              type="submit"
-              value="Create account"
-              class="createuser"
-            />
-          </form>
-        </section>
-        
+        <!-- Login form -->
+        <form class="login_form">
+          <h2>Login</h2> <!-- Header for the login form -->
+          <label for="login_username">Username</label>
+          <input type="text" id="login_username" name="username" placeholder="Username" required minlength="3" maxlength="50">
+          <label for="login_password">Password</label>
+          <input type="password" id="login_password" name="password" placeholder="Password" required minlength="3" maxlength="100">
+          <input
+            name="submit"
+            type="submit"
+            value="Login"
+            class="loginuser">
+        </form>
+        <!-- Create new account form -->
+        <form class="create_user_form">
+          <h2>Create Account</h2> <!-- Header for the create account form -->
+          <label for="new_username">Username</label>
+          <input type="text" id="new_username" name="username" placeholder="New username" required minlength="3" maxlength="50">
+          <label for="new_password">Password</label>
+          <input type="password" id="new_password" name="password" placeholder="New password" required minlength="3" maxlength="100">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <input
+            name="submit"
+            type="submit"
+            value="Create account"
+            class="createuser">
+        </form>
       </section>
-
-    </body>
-
+    </div>
     <!-- Snackbar -->
     <div id="snackbar-target"></div>
-    
+    <!-- Footer -->
     <footer>
       <p>Copyright © 2030 MoodMate. All rights reserved.</p>
       <p>Just kidding</p>
     </footer>
-
     <script type="module" src="auth.js"></script>
   </body>
 </html>
