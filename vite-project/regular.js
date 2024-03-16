@@ -505,7 +505,7 @@ function replaceEditEntryForm() {
   // Attach a event listener to the new 'Create new diary entry' form
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    generateNewEntry();
+    gatherNewEntryData();
     createCardSet();
   });
   // Append container to diary section
@@ -617,55 +617,10 @@ async function deleteExercise(evt) {
   } 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Get and listen for "Hide entries" -button
 const hideEntriesBtn = document.querySelector("#hide_all_entries");
 hideEntriesBtn.style.display = "none";
 hideEntriesBtn.addEventListener("click", clearEntries);
-
 
 // Get and listen for "Hide entries" -button
 const hideExercisesBtn = document.querySelector("#hide_all_exercises");
@@ -675,6 +630,34 @@ hideExercisesBtn.addEventListener("click", clearExercises);
 // Get and listen for 'Log out' -button
 const logOutBtn = document.querySelector("#log-out");
 logOutBtn.addEventListener("click", logOut);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -692,17 +675,18 @@ entryForm.addEventListener("submit", (event) => {
     // Input didnt pass validation
     entryForm.reportValidity()
     return;
-  // Check if user has changed from the placeholder
+  // Check if user has changed input in dropdown menu from the placeholder
   } else if (mood === 'placeholder') {
     showSnackbar('Crimson', 'Please select a color to represent your mood')
     return;
   } else {
     // Form passed all validation continue to send request
-    generateNewEntry();
+    gatherNewEntryData();
   }
 });
 
-function generateNewEntry() {
+// Function tho gather data from the form
+function gatherNewEntryData() {
   // Get form values
   const mood = document.getElementById("mood").value;
   const weight = document.getElementById("weight").value;
@@ -720,6 +704,53 @@ function generateNewEntry() {
   console.log("Entry form submitted with:", entryFormData);
   postNewEntry(entryFormData);
 }
+
+async function postNewEntry(entry) {
+  // Define POST request and send it
+  const data = await postRequest('/api/entries', entry) 
+  if (!data.error) {
+    console.log(data);
+    showSnackbar("darkgreen", "New entry added!");
+  } else {
+    showSnackbar("crimson", "New entry couldn't be added!");
+  }
+}
+
+// async function postRequest(endpoint, postBody) {
+//   // Define request
+//   let token = localStorage.getItem("token");
+//   const options = {
+//     method: "POST",
+//     headers: {
+//       Authorization: "Bearer: " + token,
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(postBody),
+//   };
+//   return fetchData(endpoint, options)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -854,16 +885,6 @@ async function postNewExercise(exercise) {
   }
 }
 
-async function postNewEntry(entry) {
-  // Define request
-  const data = await postRequest('/api/entries', entry)
-  if (!data.error) {
-    console.log(data);
-    showSnackbar("darkgreen", "New entry added!");
-  } else {
-    showSnackbar("crimson", "New entry couldn't be added!");
-  }
-}
 
 async function putEntry(entry) {
   // Define request
