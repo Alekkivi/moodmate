@@ -147,6 +147,7 @@
 /* ---------------------- Right exercise ------------------------ */
 .right-exercise {
   flex: 3;
+  padding-bottom: 10vh;
 }
 /* ---------------------- Middle exercise ------------------------ */
 .middle-exercise {

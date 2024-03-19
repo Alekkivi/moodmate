@@ -72,6 +72,7 @@ async function getUsers() {
       showSnackbar('Crimson', data.message);
     }
   } else {
+    // This shouldnt be possible because the root is signed in
     showSnackbar('Crimson', 'No users found');
   }
 }
@@ -111,20 +112,29 @@ async function deleteUser(evt) {
   } else {
     // Ask for confirmation to send the request
     const answer = confirm(
-      `Oletko varma että haluat poistaa käyttäjän ID: ${id} `
+      `Are you sure that you want to delete everything with User ID = ${id} ?`
     );
     // Check if user proceeded with the process
     if (answer) {
-      // Send a request to delete every Exercise entry      - Will return 404 If no exercises found!
-      deleteRequest(`/api/exercises/${id}`);
-      // Send a request to delete every Diary entry         - Will return 404 If no entries found!
-      deleteRequest(`/api/entries/${id}`);
-      // Send a request to delete the chosen user
-      const response = await deleteRequest(`/api/users/${id}`);
+      // Send a request to delete every Exercise entry - Will return 404 If no exercises found!
+      let response = await deleteRequest(`/api/exercises/${id}`);
+      // Wait for response before sending another request to avoid FK constraint problems
+      if (response){
+        // Send a request to delete every Diary entry - Will return 404 If no entries found!
+        response = await deleteRequest(`/api/entries/${id}`);
+      }
+      // Wait for response before sending another request to avoid FK constraint problems
+      if (response){
+        // Send a request to delete user
+        response = await deleteRequest(`/api/users/${id}`);
+      }
+      // Check if there was a error when deleting the user
       if (response.error) {
-        showSnackbar('crimson', response.message);
+        showSnackbar('crimson', 'Something went wrong - Please try again');
       } else {
         // Update the table
+        showSnackbar('Darkgreen', 'User deleted')
+        document.querySelector('#entry_target').innerHTML = '';
         getUsers();
       }
     }
@@ -210,14 +220,7 @@ function createTable(data) {
 
 // Fill a section with individually created cards
 async function createCardSet(entries) {
-  // Check how many entries the parameter variable contains
-  const entryCount = Object.keys(entries).length;
-  if (entryCount === 0) {
-    // Inform the user that no entries were found
-    showSnackbar('crimson', 'No entries found');
-    return;
-  } else {
-    showSnackbar('darkgreen', `${entryCount} entries found`);
+    showSnackbar('darkgreen', `${Object.keys(entries).length} entries found`);
     // Display 'Hide entries' -button
     document.querySelector('#hide_all_entries').style.display = 'inline';
     // Make sure the target area is empty
@@ -228,7 +231,6 @@ async function createCardSet(entries) {
       // Create and append the card to the container
       entriesContainer.appendChild(createSingleCard(row));
     });
-  }
 }
 
 // Using entry data create a card element

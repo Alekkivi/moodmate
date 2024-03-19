@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// Get and listen for 'Cancel' -link
+const cancelAccountUpdateBtn = document.querySelector('#cancel-account-update-button')
+cancelAccountUpdateBtn.addEventListener('click', cancelAccountUpdate)
+
 // Get and listen for 'Update login' -link 
 const viewProfileBtn = document.querySelector('#view-user-text-button');
 viewProfileBtn.addEventListener('click', displayUserInfo);
@@ -112,16 +116,18 @@ async function putUser(userData) {
   if (!data.error) {
     // Display successful operation to user
     showSnackbar('darkgreen', 'Account information updated!');
-    // Update the username variable in local storage
     localStorage.setItem('username', userData.username);
     // Update the greeting header to match new username
     document.querySelector('#greeting-header').innerHTML = `Welcome back ${userData.username}!`;
     // Hide the 'Update account information' -form
     cancelAccountUpdate();
   } else {
+
     // Bad request error indicates that there is a problem with the syntax
     if (data.error === 'Bad Request'){
       showSnackbar('Crimson', 'Invalid username or email address')
+    } else if (data.status === 409){
+      showSnackbar('crimson', data.error)
     } else {
       // There was a unknown error 
       showSnackbar('crimson', 'Account could not be updated');
