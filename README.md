@@ -11,19 +11,19 @@ The server for this application is based on the example version provided in the 
 
 [Complete API documentation](https://hyte-server-aleksi.northeurope.cloudapp.azure.com/docs/)\
 The API is Accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`\
-More detailed information about the server can be found in the[MoodMate API repository](https://github.com/Alekkivi/hyte-server-example-24)
+More detailed information about the server can be found in the [MoodMate API repository](https://github.com/Alekkivi/hyte-server-example-24)
 
-![Database structure](./interface-screenshots/db.png)
+![Database structure](vite-project/interface-screenshots/db.png)
 
 ## Homepage and its features
 The MoodMate homepage welcomes visitors to the application and offers additional insights into the project. It comprises sections such as Home, About, and Contact Us. Users can navigate seamlessly through the page using a smooth scroll navigation bar or opt to log in. Log in will direct the user to a seperate authentication page.
 
-![Homepage preview](./interface-screenshots/homepage.png)
+![Homepage preview](vite-project/interface-screenshots/homepage.png)
 
 ## Authentication page and its features
 On this page, users are presented with two separate forms: one for logging in and another for creating an account. This design allows both existing users to access their accounts and new users to register and create their own accounts.
 
-![Authentication page preview](./interface-screenshots/login.png)
+![Authentication page preview](vite-project/interface-screenshots/login.png)
 
 - User can create an account that requires a unique username and email address.
 - All new accounts are set to Regular user level by default.
@@ -40,7 +40,7 @@ Because most MoodMate users are regular by user level, this is the most common p
 
 When the page is loaded, the client is verified using local storage to determine if they should have access to the contents of the page. If the client shouldn't have access to the page, they are redirected to the MoodMate homepage. If the verification is successful, the user is greeted by their username.
 
-![Regular user landing section preview](./interface-screenshots/regular-home.png)
+![Regular user landing section preview](vite-project/interface-screenshots/regular-home.png)
 
 In the landing section, the user can click on two separate links:
 
@@ -48,7 +48,7 @@ In the landing section, the user can click on two separate links:
 - One to summon a popup modal to display user information in greater detail.
 
 ### Diary entries
-![Regular user diary section preview](./interface-screenshots/regular-diary.png)
+![Regular user diary section preview](vite-project/interface-screenshots/regular-diary.png)
 
 In the diary section, users can:
 - Retrieve all diary entries. 
@@ -59,7 +59,7 @@ In the diary section, users can:
 - All actions use a snackbar to provide feedback for successful and unsuccessful interactions.
 
 ### Exercise logs
-![Regular user exercise section preview](./interface-screenshots/regular-exercise.png)
+![Regular user exercise section preview](vite-project/interface-screenshots/regular-exercise.png)
 
 In this section, users can track their performed exercises and activities, including their duration and intensity. By utilizing existing exercise logs, statistics are calculated to analyze how time is distributed between different activities and intensity levels. 
 
@@ -75,7 +75,7 @@ Admin users have the capability to manage the application from this dashboard vi
 
 When the admin page is loaded, the client is verified using local storage to determine if they should have access to the contents of the page. If the client shouldn't have access to the page, they are redirected to the MoodMate homepage. If the verification is successful, the user is greeted by their username.
 
-![Admin user homepage preview](./interface-screenshots/admin.png)
+![Admin user homepage preview](vite-project/interface-screenshots/admin.png)
 
 - Admin user can view all users on the application.
 - Admin user can see user-specific diary entries.
@@ -100,3 +100,4 @@ When the admin page is loaded, the client is verified using local storage to det
 - Application is launched on Azure web services
 - [Snackbar - w3schools](https://www.w3schools.com/howto/howto_js_snackbar.asp)
 - [Background image - unsplash](https://unsplash.com/@fempreneurstyledstock)
+- Metropolia UAS logo acts as MoodMate logo
