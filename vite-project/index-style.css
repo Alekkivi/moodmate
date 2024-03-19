@@ -85,17 +85,25 @@
         display: inline;
         margin-bottom: 10vh;
     }
-
-    .about h4, .about p {
+    .about h3{
         width: 90%;
     }
     .contact{
-        width: 60%;
-        margin-bottom: 40%;
+        width: 90%;
+        margin-bottom: 5%;
     }
-    
-    footer p{
-        line-height: 1.5;
-        letter-spacing: 1px;
-      }
+    .about h4, .about p{
+        width: 90%;
+    }
+    p {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Target <p> elements within specific sections */
+    #introduction-content p,
+    .about p,
+    .contact p {
+        font-size: 17px;
+    }
 }

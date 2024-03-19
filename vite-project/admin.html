@@ -9,23 +9,27 @@
     <title>MoodMate - Admin</title>
   </head>
   <body>
-    <header>
-      <h1 id="nav-header">
-        <a href="#top" class="logo"
-          ><img src="/moodmate_logo.png" alt="Logo"
-        /></a>
-      </h1>
-      <nav class="navigation">
-        <a href="#" id="log-out">Log out</a>
-      </nav>
-    </header>
 
+    <!-- Nav bar -->
+    <header>
+      <h1 id="nav-header"><a href="#top" class="logo" ><img src="/moodmate_logo.png" alt="Logo"/></a></h1>
+      <nav class="navigation"><a href="#" id="log-out">Log out</a></nav>
+    </header>
+    
+    <!-- Pop up dialog for user information -->
+    <dialog class="info_dialog">
+      <div id="modal_target"></div>
+    </dialog>
+
+    <!-- Container for all content -->
     <div id="container">
 
+      <!-- Greeting section -->
       <section class="greeting" id="top">
         <h2 class="user">Hello <span id="name"></span><br/>You are logged in as admin</h2>
       </section>
 
+      <!-- Instructions for using forms -->
       <section class="forms">
         <h3>Manage all users</h3>
         <p>
@@ -40,35 +44,34 @@
           user.
         </p>
         <p id="warning">Please exercise caution!</p>
-
+        
+        <!-- All users table - Target for users GET -->
         <table class="styled-table">
           <tbody class="tbody">
             <thead></thead>
           </tbody>
         </table>
 
-        <div class=""></div>
-
+        <!-- Buttons to toggle visible elements -->
         <button class="get_users">Get users</button>
         <button class="get_users" id="hide_all_users">Hide users</button>
         <button class="get_users" id="hide_all_entries">Hide entries</button>
       </section>
 
-      <dialog class="info_dialog">
-        <div id="modal_target"></div>
-      </dialog>
-
+      <!-- Target section for cards -->
       <section id="entry_target"></section>
     </div>
+
+    <!-- Snackbar -->
     <div id="snackbar-target"></div>
     
-
     <!-- Footer -->
     <footer>
       <p>Copyright © 2030 MoodMate. All rights reserved.</p>
       <p>Just kidding</p>
     </footer>
 
+    <!-- Script -->
     <script type="module" src="/admin.js"></script>
   </body>
 </html>

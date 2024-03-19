@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/regular-style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoodMate</title>
   </head>
   <body>
@@ -18,18 +17,40 @@
       </nav>
     </header>
 
+    <!-- Pop up dialog for user information -->
+    <dialog class="info_dialog">
+      <div id="modal_target"></div>
+    </dialog>
+
     <!-- Landing section -->
     <section class="landing-section" id="landing">
-      <h2 id="greeting-header"></h2>
-      <h2 id="date-header"></h2>
+      <h2 id="greeting-header">Placeholder</h2>
+      <h2 id="date-header">Placeholder</h2>
       <p>Every entry in your diary is a step forward in your journey of self-discovery and growth. Embrace each word as a testament to your progress and resilience.</p>
-
-      <p id="update-account-question">Would you like to update your login information?</p>
-      <p id="update-account-text-button">Update Login</p>
-      <p id="cancel-account-update-button">Cancel</p>
       
-      <!-- Target for Update user form -->
-      <form id="update-user-form"></form>
+      <!-- Text and links for updating user info -->  
+      <p id="update-account-question">Would you like to update your login information?</p>
+      <p id="update-account-text-button">Update Login</p>   <!-- This is a clickable link -->
+      <p id="cancel-account-update-button">Cancel</p>       <!-- This is a clickable link -->
+      
+      <!-- Text and links for viewing user info -->  
+      <p id="view-user-info-question">Want to see your user information?</p>
+      <p id="view-user-text-button">View profile</p>        <!-- This is a clickable link -->
+      
+      <!-- Hidden in desktop - shown in mobile -->
+      <button id="mobile-sign-out">Sign out</button>
+
+      <!-- Update user info form -->
+      <form id="update-user-form" style="display: none;">
+        <h2>Update account information</h2>
+        <label for="updated-username">New username</label>
+        <input type="text" name="updated-username" id="updated-username" placeholder="New username" required minlength="3" maxlength="50">
+        <label for="updated-password">New password</label>
+        <input type="password" name="updated-password" id="updated-password" placeholder="New password" required minlength="3" maxlength="100">
+        <label for="updated-email">Email</label>
+        <input type="email" name="updated-email" id="updated-email" placeholder="New email" required>
+        <button type="submit" id="update-account">Update account information</button>
+      </form>
     </section>
 
     <!-- Diary section -->
@@ -38,7 +59,7 @@
       <!-- Left side of the diary section -->
       <div class="left-diary">
 
-        <!-- Top-left section -->
+        <!-- Top-left diary -->
         <div class="top-left-diary">
           <h3>Manage your diary</h3>
           <p>MoodMate ensures that your
@@ -49,10 +70,11 @@
           <button id="hide_all_entries">Hide entries</button>
         </div>
 
-        <!-- Bottom-left section -->
+        <!-- Bottom-left diary -->
         <div class="bottom-left-diary" >
           <div class="container" id="diary-container">
-            <h1>Create a diary entry</h1>
+            <h3>Create a diary entry</h3>
+
             <!-- Form for new diary entry -->
             <form method="post" id="entry_form">
               <label for="mood">Pick a color to represent your day: </label>
@@ -73,7 +95,7 @@
                 placeholder="Enter your weight"
                 required
                 min="0.1"
-              />
+                max="635">
 
               <label for="sleep">Sleep hours:</label>
               <input
@@ -84,8 +106,7 @@
                 placeholder="Enter your sleep hours"
                 required
                 min="0"
-                max="24"
-              />
+                max="24">
 
               <label for="notes">Describe your day:</label>
               <textarea
@@ -94,8 +115,8 @@
                 rows="8"
                 placeholder="Enter additional notes"
                 style="resize: none"
-                maxlength="250"
-              ></textarea>
+                maxlength="250">
+              </textarea>
               <!-- Submit button -->
               <button type="submit" id="entry_submit">Create diary entry</button>
             </form>
@@ -103,7 +124,7 @@
         </div>
       </div>
 
-      <!-- Right diary section -->
+      <!-- Right diary section - Target for entry cards -->
       <div class="right-diary"></div>
     </section>
 
@@ -112,7 +133,7 @@
 
       <!-- left exercise section -->
       <div class="left-exercise">
-        <!-- top left exercise section -->
+        <!-- top left exercise -->
         <div class="top-left-exercise">
           <h3>Track your exercises</h3>
           <p>
@@ -124,8 +145,9 @@
           <button id="hide_all_exercises">Hide exercises</button>
 
         </div>
-        <!-- Bottom left exercise section -->
+        <!-- Bottom left exercise  -->
         <div class="bottom-left-exercise">
+
           <!-- "Add a exercise" container -->
           <div class="container" id="exercise-container">
             <h4>Add a exercise</h4>
@@ -138,7 +160,7 @@
                 <option value="Hockey">Hockey</option>
                 <option value="Football">Football</option>
                 <option value="Dancing">Dancing</option>
-                <option value="Swimmming">Swimmming</option>
+                <option value="Swimming">Swimmming</option>
                 <option value="Floorball">Floorball</option>
                 <option value="Weightlifting">Weightlifting</option>
                 <option value="Combat sports">Combat sports</option>
@@ -152,8 +174,7 @@
                 id="duration"
                 name="duration"
                 step="0.1"
-                required
-              />
+                required>
               <!-- intensity dropdown menu  -->
               <label for="intensity">intensity level:</label>
               <select id="intensity" name="intensity">
@@ -166,20 +187,19 @@
 
               <!-- Submit button -->
               <button type="submit">Add entry</button>
+            </form>
           </div>
         </div>
       </div>
-
-      <!-- Middle exercise section -->
+      <!-- Middle exercise section - Target for exercise stats -->
       <div class="middle-exercise"></div>
 
-      <!-- Right exercise section -->
+      <!-- Right exercise section - Target for a table that has all exercises -->
       <div class="right-exercise">
         <!-- Table target to dump exercise data-->
         <table class="styled-table">
-          <tbody class="tbody">
-            <thead class="thead"></thead>
-          </tbody>
+          <thead class="thead"></thead>
+          <tbody class="tbody"></tbody>
         </table>
       </div>
 
@@ -193,6 +213,7 @@
       <p>Copyright © 2030 MoodMate. All rights reserved.</p>
       <p>Just kidding</p>
     </footer>
+
     <!-- Import script -->
     <script type="module" src="./regular.js"></script>
   </body>

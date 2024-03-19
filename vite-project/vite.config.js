@@ -7,7 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // List your html files here, e.g:
-        index: resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'index.html'),
         auth: resolve(__dirname, 'auth.html'),
         regular: resolve(__dirname, 'regular.html'),
         admin: resolve(__dirname, 'admin.html'),

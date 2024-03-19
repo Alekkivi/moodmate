@@ -1,33 +1,32 @@
-import { showSnackbar } from "./snackbar.js";
-import { fetchData } from "./fetch.js";
-import "./universal-styles.css"
-import "./auth-style.css"
-'use strict'
+'use strict';
+import { showSnackbar } from './snackbar.js';
+import { fetchData } from './fetch.js';
+import './universal-styles.css';
+import './auth-style.css';
 
 // Get and listen for 'Login' -button
-const loginUser = document.querySelector(".loginuser");
-loginUser.addEventListener("click", async (evt) => {
-  const form = document.querySelector(".login_form");
+const loginUser = document.querySelector('.loginuser');
+loginUser.addEventListener('click', async (evt) => {
+  const form = document.querySelector('.login_form');
   evt.preventDefault();
 
   // Input validation
   if (!form.checkValidity()) {
-    console.log('väärrää')
     // If validation failed display a generic error message
     showSnackbar('Crimson', 'Incorrect username or password');
     return;
   }
   // If input passed validation - continue to collect data from the 'Log in' -form 
-  const endpoint = "/api/auth/login";
+  const endpoint = '/api/auth/login';
   const data = {
-    username: form.querySelector("input[name=username]").value,
-    password: form.querySelector("input[name=password]").value,
+    username: form.querySelector('input[name=username]').value,
+    password: form.querySelector('input[name=password]').value,
   };
   // Define the request
   const options = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     // body data type must match "Content-Type" header
     body: JSON.stringify(data),
@@ -42,10 +41,10 @@ loginUser.addEventListener("click", async (evt) => {
       // Log in was successful - Get user level from response
       const userLevel = data.user.user_level;
       // Save token from response to local storage
-      localStorage.setItem("token", data.token);
+      localStorage.setItem('token', data.token);
       // Direct to new page depending on user level
-      if (userLevel === "admin") {
-        window.location.href = "admin.html";
+      if (userLevel === 'admin') {
+        window.location.href = 'admin.html';
       } else if (userLevel === 'regular') {
         window.location.href = 'regular.html';
       }
@@ -54,43 +53,45 @@ loginUser.addEventListener("click", async (evt) => {
 });
 
 // Get and listen for 'Create account' -button
-const createUser = document.querySelector(".createuser");
-createUser.addEventListener("click", async (evt) => {
-  const form = document.querySelector(".create_user_form");
+const createUser = document.querySelector('.createuser');
+createUser.addEventListener('click', async (evt) => {
+  const form = document.querySelector('.create_user_form');
   evt.preventDefault();
   // Input validation
   if (!form.checkValidity()) {
-    form.reportValidity()
+    form.reportValidity();
     return;
   }
   // If input passed validation - Collect data from the 'Create Account' -form 
-  const endpoint = "/api/users";
+  const endpoint = '/api/users';
   const data = {
-    username: form.querySelector("input[name=username]").value,
-    password: form.querySelector("input[name=password]").value,
-    email: form.querySelector("input[name=email]").value,
+    username: form.querySelector('input[name=username]').value,
+    password: form.querySelector('input[name=password]').value,
+    email: form.querySelector('input[name=email]').value,
   };
   // Define the request
   const options = {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     // body data type must match "Content-Type" header
     body: JSON.stringify(data),
   };
   // Send request and handle response
   fetchData(endpoint, options).then((data) => {
+    console.log(data)
     // Check response for errors
     if (!data.error) {
       // If no errors occurred, inform user that new account was created
       showSnackbar('darkgreen', 'New user created!');
       // Check if response contains error about taken username
-    } else if (data.error === "Username taken") {
-      showSnackbar('crimson', 'Username or email already taken');
+    } else if (data.error === 'Bad Request') {
+      // Invalid email input will return Bad request error
+      showSnackbar('Crimson', 'Invalid email address')
     } else {
-      // Display other error
-      showSnackbar("crimson", 'Invalid input');
+      // Display other error - usually that is that username is taken
+      showSnackbar('crimson', data.error);
     }
   });
 });

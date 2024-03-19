@@ -1,26 +1,22 @@
-
 /* ----------------------------- Landing ----------------------------- */
 .landing-section {
   padding-left: 2%;
   height: 100vh;
   width: 100%;
 }
-
-#greeting-header, #date-header {
+#greeting-header,
+#date-header {
   font-size: 55px;
   letter-spacing: 1.5px;
 }
-
 #greeting-header {
   padding-top: 38vh;
 }
-
 #date-header {
   padding-top: 1vh;
   color: #c4c4c4;
   font-size: 35px;
 }
-
 .landing-section p {
   padding-top: 2vh;
   font-size: 20px;
@@ -28,40 +24,41 @@
   letter-spacing: 1.5px;
   line-height: 1.5;
 }
-
-#update-account-question{
+#update-account-question {
   padding-top: 3vh;
   margin-bottom: 0;
 }
-
-#update-account-text-button, #cancel-account-update-button{
+#update-account-text-button,
+#view-user-text-button,
+#cancel-account-update-button {
   padding-top: 0.5vh;
   font-weight: 600;
   cursor: pointer;
-  width: 20vh;
+  width: 23vh;
 }
-#update-account-text-button:hover{
+#update-account-text-button:hover, #view-user-text-button:hover {
   color: #2260e4;
 }
-
-#cancel-account-update-button{
+#cancel-account-update-button {
   display: none;
   width: 6.8vh;
 }
-
-#cancel-account-update-button:hover{
+#cancel-account-update-button:hover {
   color: rgb(172, 14, 14);
 }
-
+#mobile-sign-out {
+  display: none;
+}
 /* ----------------------- Update Account form ------------------------- */
 #update-user-form {
-  /* display: none; */
-  margin-top: 20px; 
-  width: 400px; 
+  margin-top: 20px;
+  width: 400px;
   height: 380px;
   float: left;
-  padding: 20px; 
-  box-sizing: border-box; 
+  padding: 20px;
+  box-sizing: border-box;
+  display: none;
+  background-color: #28459431;
 }
 #update-user-form select,
 #update-user-form input,
@@ -69,52 +66,33 @@
   margin: 5px 0 10px 0;
 }
 
-#update-user-form h2{
+#update-user-form h2 {
   margin: 0.5vh 0 2vh 0;
 }
-#update-account-buttons{
+#update-account-buttons {
   display: flex;
   justify-content: space-between;
 }
-#update-user-form button{
+#update-user-form button {
   margin: 2% 0;
   padding: 10px;
 }
-
-/* ------------------------- Form validation ----------------------------- */
-#mood option[disabled] {
-  color: #999; /* Placeholder text color */
-}
-
 /* ------------------------------ Diary ----------------------------- */
+
 .diary-section {
-  display: flex;
   font-size: 20px;
   padding-top: 10vh;
   margin-bottom: 10vh;
+  width: 100%;
+  display: flex;
 }
 .left-diary {
-  /* background-color: aqua; */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-.top-left-diary {
-  /* background-color: firebrick; */
-  flex: 0.7;
-}
-#diary-container{
-  margin: 0;
+  padding: 0 1% 0 2%;
+  width: 27%;
+  flex-shrink: 0;
 }
 .bottom-left-diary {
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-  /* background-color: blue; */
-  flex: 3.5;
-  margin: 0;
+  padding-top: 3vh;
 }
 
 .top-left-diary h3 {
@@ -125,105 +103,83 @@
 .top-left-diary p {
   padding-bottom: 3vh;
   line-height: 1.5;
-  padding-right: 2vh;
 }
 
 .right-diary {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 3;
-    /* background: linear-gradient(to bottom, #eeeeee, #dddddd); */
-    /* background-color: green; */
-  }
-
+  display: flex;
+  flex-wrap: wrap;
+  width: 73%;
+  padding: 0 1%;
+}
 /* --------------------------- Exercise ------------------------ */
 .exercise-section {
   padding-top: 10vh;
   display: flex;
   font-size: 20px;
-  /* background-color: #dddddd; */
 }
-
-#exercise-container{ /* This is add exercise-form-bg*/
-  /* background-color: gold; */
+#exercise-container {
   margin: 0;
 }
 /* ---------------------- Left exercise ------------------------ */
 .left-exercise {
-  /* background-color: aqua; */
   flex: 1.5;
   display: flex;
   flex-direction: column;
   padding-left: 2%;
 }
-
 .top-left-exercise {
-  /* background-color: firebrick; */
   flex: 1.5;
 }
-
 .bottom-left-exercise {
   padding-top: 2vh;
   padding-bottom: 5vh;
-  /* background-color: blue; */
   flex: 3.5;
 }
-
 .top-left-exercise h3 {
   padding-bottom: 2vh;
   font-size: 40px;
 }
-
 .top-left-exercise p {
   padding-bottom: 3vh;
   line-height: 1.5;
   padding-right: 2vh;
 }
-
 /* ---------------------- Right exercise ------------------------ */
 .right-exercise {
-  /* background-color: green; */
   flex: 3;
 }
 /* ---------------------- Middle exercise ------------------------ */
-.middle-exercise{
+.middle-exercise {
   padding: 0 2% 0 2%;
   flex: 1.5;
 }
-
-.middle-exercise h4{
+.middle-exercise h4 {
   margin: 0;
   padding: 0;
   font-size: 30px;
   padding-bottom: 20px;
 }
-.middle-exercise p{
+.middle-exercise p {
   margin: 0;
   padding: 0;
   padding-bottom: 10px;
 }
-
-.middle-exercise p span{
+.middle-exercise p span {
   color: #007bff;
   font-weight: 750;
 }
-
 /* --------------------------- Forms ------------------------ */
 .container {
-  width: 430px;
-  height: 630px; 
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #b9b9b99d;
+  padding: 10px;
+  background-color: #28459431;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.container h3 {
+  padding-bottom: 2vh;
 }
 label {
-  font-weight: bold;
+  font-weight: 550;
 }
 select,
 input,
@@ -249,12 +205,98 @@ button:hover {
   background-color: #0056b3;
 }
 
-#modify-entry-form{
-    outline-style: solid;
-    outline-color: rgb(231, 179, 119);
-    outline-width: 5px;
-    height: 650px;
+#modify-entry-form {
+  outline-style: solid;
+  outline-color: rgb(228, 216, 52);
+  outline-width: 5px;
 }
-#modify-entry-form h3{
-    padding-bottom: 2vh;
+#modify-entry-form h3 {
+  padding-bottom: 2vh;
+}
+
+/*------------------- Media rules for mobile view -----------------*/
+@media screen and (max-width: 1350px) {
+  #greeting-header{
+    padding-top: 15vh;
+  }
+  .landing-section,
+  .diary-section,
+  .exercise-section {
+    flex-direction: column;
+    align-items: center; 
+  }
+  body {
+    background: none;
+    background-color: #e6e6e6;
+  }
+  .landing-section,
+  .landing-section p,
+  .diary-section,
+  .exercise-section,
+  .left-diary,
+  .middle-exercise,
+  .right-exercise,
+  .styled-table,
+  .left-exercise,
+  .top-left-exercise,
+  .bottom-left-exercise {
+    width: 95%;
+  }
+  .landing-section,
+  .landing-section p,
+  .diary-section,
+  .exercise-section,
+  .left-diary,
+  .middle-exercise,
+  .right-exercise,
+  .styled-table,
+  .left-exercise,
+  .top-left-exercise,
+  .bottom-left-exercise {
+    max-width: 100%;
+  }
+  .landing-section,
+  .diary-section,
+  .exercise-section,
+  .left-diary,
+  .middle-exercise,
+  .right-exercise,
+  .styled-table,
+  .left-exercise,
+  .top-left-exercise,
+  .bottom-left-exercise {
+    margin: auto;
+  }
+  .landing-section {
+    padding: 0;
+    height: auto;
+  }
+  .middle-exercise{
+    padding-bottom: 5vh;
+  }
+  .diary-section,
+  .exercise-section {
+    padding-bottom: 20vh;
+  }
+  .styled-table {
+    width: 100%;
+    font-size: 14px;
+  }
+  .thead th {
+    padding: 8px;
+  }
+  .tbody td {
+    padding: 8px;
+  }
+  .del {
+    font-size: 0;
+    padding: 7px 7px;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 7px;
+  }
+  .del:hover {
+    background-color: #cc0000;
+    cursor: pointer;
+  }
 }
