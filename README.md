@@ -8,7 +8,7 @@ The application can be found in this link: **[MoodMate](hyte-server-aleksi.north
 
 ## Backend server and database connection.
 The server for this application is based on the example version provided in the web development course, serving as a reference point. Additional functionality has been implemented on top of this base to tailor the server to the specific requirements of the MoodMate application.\
-Unique features:
+\Unique features:
 - User levels (regular and admin)
 - Exercises endpoint and additional functionality
 - Some model queries have been altered to match the needs of the application
