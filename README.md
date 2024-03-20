@@ -12,10 +12,13 @@ The server for this application is based on the example version provided in the 
 Unique features:
 - User levels (regular and admin)
 - Exercises endpoint and additional functionality
+- DiaryEntries table structure has been altered to match the needs of the application
 - Some model queries have been altered to match the needs of the application
 
-[Complete API documentation](https://hyte-server-aleksi.northeurope.cloudapp.azure.com/docs/)\
-The API is accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`\
+[Complete API documentation](https://hyte-server-aleksi.northeurope.cloudapp.azure.com/docs/)
+
+The API is accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`
+
 More detailed information about the server can be found in the [MoodMate API repository](https://github.com/Alekkivi/hyte-server-example-24)
 
 ![Database structure](vite-project/interface-screenshots/db.png)
