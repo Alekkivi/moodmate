@@ -62,7 +62,7 @@ When the page is loaded, the client is verified using local storage to determine
 ![Regular user landing section preview](vite-project/interface-screenshots/regular-home.png)
 
 In the landing section, the user can click on two separate links:
-
+- Both of these links react to user mouse movement by a changing the cursor to pointer and by changing link color on mouse hover.
 - One to display a form to update user information such as username, email, or password. Validation is performed on these inputs to ensure they are unique to the MoodMate application.
 - One to display a popup modal to display user information in greater detail.
 
