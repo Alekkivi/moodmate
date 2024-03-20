@@ -17,7 +17,18 @@ Unique features:
 
 [Complete API documentation](https://hyte-server-aleksi.northeurope.cloudapp.azure.com/docs/)
 
-The API is accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`
+MoodMate API features are accessed by URL: `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`
+```
+Endpoints for the API are:
+- api/auth/login
+- api/auth/me
+- api/users
+- api/users/:id
+- api/entries
+- api/entries/:id
+- api/exercises
+- api/exercises/:id
+```
 
 More detailed information about the server can be found in the [MoodMate API repository](https://github.com/Alekkivi/hyte-server-example-24)
 
