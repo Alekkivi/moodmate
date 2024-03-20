@@ -4,7 +4,7 @@ Welcome to MoodMate - your digital companion for self-discovery and holistic wel
 This application is a part of a web-development course and it is online during 20.3.2024 - 21.3.2024 or by request\
 **Please contact us immediately if you encounter any issues with the server not running when it should be.**
 
-The application can be found in this link: **[MoodMate](hyte-server-aleksi.northeurope.cloudapp.azure.com)**
+The application can be found in this link: **[MoodMate](https://hyte-server-aleksi.northeurope.cloudapp.azure.com)**
 
 ## Backend server and database connection.
 The server for this application is based on the example version provided in the web development course, serving as a reference point. Additional functionality has been implemented on top of this base to tailor the server to the specific requirements of the MoodMate application.
