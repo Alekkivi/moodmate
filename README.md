@@ -110,6 +110,7 @@ When the admin page is loaded, the client is verified using local storage to det
 ## Known bugs
 - The Modal HTML element might not be supported by every browser, leading to unexpected behavior in certain cases.
 - Snackbar might disappear unexpectedly when encountering spam clicking.
+- If user updates username and then refreshes the page, the token in local storage is still linked to the previous username and the greetings title will display old username. The new username is synced to the token after signing in for the first time using the new username. This is just a graphical bug and doesnt affect future login. 
 - When deleting users as an admin, a 404 error might be logged to the console. This occurs because the application attempts to delete every exercise log and diary entry associated with the user. If the user doesn't have any of these entries, a 404 error occurs. **However, the user is still deleted, but unnecessary errors are logged.**
 - There are very rare errors where FK constraints stop user deletion (Fixed 19.3.2024, yet to be tested fully) 
 
