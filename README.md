@@ -1,16 +1,20 @@
 # MoodMate
 Welcome to MoodMate - your digital companion for self-discovery and holistic well-being. MoodMate is more than just a diary; it's a transformative tool designed meticulously to help you understand yourself better, track your mood, monitor your sleep, and embark on a journey of personal growth.
 
-This application is apart of a web-development course and it is online during 20.3.2024 - 21.3.2024 or when requested.\
-**Please be sure to contact us immediately if you encounter any issues with the server not running when it should be.**
+This application is a part of a web-development course and it is online during 20.3.2024 - 21.3.2024 or by request\
+**Please contact us immediately if you encounter any issues with the server not running when it should be.**
 
 The application can be found in this link: **[MoodMate](hyte-server-aleksi.northeurope.cloudapp.azure.com)**
 
 ## Backend server and database connection.
-The server for this application is based on the example version provided in the web development course, serving as a reference point. Additional functionality has been implemented on top of this base to tailor the server to the specific requirements of the MoodMate application.
+The server for this application is based on the example version provided in the web development course, serving as a reference point. Additional functionality has been implemented on top of this base to tailor the server to the specific requirements of the MoodMate application.\
+Unique features:
+- User levels (regular and admin)
+- Exercises endpoint and additional functionality
+- Some model queries have been altered to match the needs of the application
 
 [Complete API documentation](https://hyte-server-aleksi.northeurope.cloudapp.azure.com/docs/)\
-The API is Accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`\
+The API is accessed by `https://hyte-server-aleksi.northeurope.cloudapp.azure.com/api`\
 More detailed information about the server can be found in the [MoodMate API repository](https://github.com/Alekkivi/hyte-server-example-24)
 
 ![Database structure](vite-project/interface-screenshots/db.png)
@@ -44,17 +48,17 @@ When the page is loaded, the client is verified using local storage to determine
 
 In the landing section, the user can click on two separate links:
 
-- One to update user information such as username, email, or password. Validation is performed on these inputs to ensure they are unique to the MoodMate application.
-- One to summon a popup modal to display user information in greater detail.
+- One to display a form to update user information such as username, email, or password. Validation is performed on these inputs to ensure they are unique to the MoodMate application.
+- One to display a popup modal to display user information in greater detail.
 
 ### Diary entries
 ![Regular user diary section preview](vite-project/interface-screenshots/regular-diary.png)
 
 In the diary section, users can:
-- Retrieve all diary entries. 
-- Create new diary entries, ensuring that all inputs are validated to prevent placeholders from being submitted to the backend. 
-- Modify existing diary entries.
-- Delete existing diary entries. 
+- Retrieve all diary entries that the user has made previously. 
+- Create new diary entries. Before submission input validation is performed to this new entry. 
+- Modify existing diary entries by clicking the 'edit' button on the specific card.
+- Delete existing diary entries by clicking the 'deleten button on the specific card. 
 - Ability to hide all diary entries from the document flow to maintaining user privacy.
 - All actions use a snackbar to provide feedback for successful and unsuccessful interactions.
 
@@ -82,7 +86,6 @@ When the admin page is loaded, the client is verified using local storage to det
 - Admin user can delete any diary entry.
 - Admin user can access any user's detailed user information.
 - Admin user can delete any profile, except their own. This deletion process will also delete every diary and exercise entry associated with that specific user ID.
-- Ability to log out from the page.
 
 ### Other features
 - Basic responsiveness
