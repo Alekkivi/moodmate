@@ -11,7 +11,7 @@ The server for this application is based on the example version provided in the 
 
 Unique features:
 - User levels (regular and admin)
-- Exercises endpoint and additional functionality
+- Completely new endpoint (Exercises) and additional functionality
 - DiaryEntries table structure has been altered to match the needs of the application
 - Some model queries have been altered to match the needs of the application
 
